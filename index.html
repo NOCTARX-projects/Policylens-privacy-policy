@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PolicyLens — Privacy Policy</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:      #0a0e14;
+    --surface: #0d1117;
+    --border:  #1e2d3d;
+    --text:    #c9d8e8;
+    --muted:   #5c7a99;
+    --accent:  #00e5ff;
+    --green:   #00e676;
+    --red:     #ff3c6e;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 10;
+  }
+  .logo {
+    font-family: 'Courier New', monospace;
+    font-size: .65rem;
+    letter-spacing: .2em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .logo span { color: var(--muted); }
+  .logo-sep { color: var(--border); }
+  nav { margin-left: auto; display: flex; gap: 1.5rem; }
+  nav a {
+    font-family: 'Courier New', monospace;
+    font-size: .7rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: .08em;
+    transition: color .2s;
+  }
+  nav a:hover { color: var(--accent); }
+
+  /* ── Hero ── */
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-badge {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-size: .6rem;
+    letter-spacing: .15em;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: .3rem .8rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: #e8f0fe;
+    margin-bottom: .6rem;
+    line-height: 1.2;
+  }
+  .hero-sub {
+    color: var(--muted);
+    font-size: .95rem;
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+  }
+  .last-updated {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-family: 'Courier New', monospace;
+    font-size: .65rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: .3rem .8rem;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); display: inline-block; }
+
+  /* ── Layout ── */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  /* ── TL;DR Cards ── */
+  .tldr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .tldr-card {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.2rem;
+    background: var(--surface);
+  }
+  .tldr-card.good { border-left-color: var(--green); }
+  .tldr-card.warn { border-left-color: #ffd600; }
+  .tldr-card .tc-icon { font-size: 1.2rem; margin-bottom: .4rem; display: block; }
+  .tldr-card .tc-title { font-size: .75rem; font-weight: 700; margin-bottom: .25rem; color: #e8f0fe; }
+  .tldr-card .tc-body { font-size: .72rem; color: var(--muted); line-height: 1.5; }
+
+  /* ── Sections ── */
+  section { margin-bottom: 2.5rem; }
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e8f0fe;
+    margin-bottom: .75rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 1.1rem;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+  p { color: var(--muted); margin-bottom: .8rem; }
+  p strong { color: var(--text); }
+  ul { color: var(--muted); padding-left: 1.2rem; margin-bottom: .8rem; }
+  li { margin-bottom: .35rem; }
+  li strong { color: var(--text); }
+
+  /* ── Highlight boxes ── */
+  .highlight-box {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    border-left: 3px solid var(--green);
+  }
+  .highlight-box.warn { border-left-color: #ffd600; }
+  .highlight-box p { margin: 0; font-size: .85rem; }
+
+  /* ── Contact ── */
+  .contact-card {
+    border: 1px solid var(--accent);
+    padding: 1.5rem;
+    text-align: center;
+    background: var(--surface);
+  }
+  .contact-card h3 {
+    color: var(--accent);
+    font-family: 'Courier New', monospace;
+    font-size: .75rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: .75rem;
+  }
+  .contact-card p { font-size: .85rem; margin-bottom: .75rem; }
+  .contact-card a {
+    color: var(--accent);
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-size: .8rem;
+  }
+  .contact-card a:hover { text-decoration: underline; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: .65rem;
+    color: var(--muted);
+    letter-spacing: .08em;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    header { padding: 1rem; flex-wrap: wrap; }
+    nav { gap: 1rem; }
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .container { padding: 2rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">NOCTARX <span class="logo-sep">·</span> <span>PolicyLens</span></div>
+  <nav>
+    <a href="https://github.com/NOCTARX-projects" target="_blank">GitHub</a>
+    <a href="https://www.buymeacoffee.com/noctarxcorp" target="_blank">Support</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">⬡ Legal Document</div>
+  <h1>Privacy Policy</h1>
+  <p class="hero-sub">PolicyLens is built on a simple principle: an extension that analyzes privacy policies must itself have an exemplary privacy policy.</p>
+  <div class="last-updated">
+    <span class="dot"></span>
+    Last updated: April 2026 &nbsp;·&nbsp; Version 1.6.0
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- TL;DR -->
+  <div class="tldr-grid">
+    <div class="tldr-card good">
+      <span class="tc-icon">✅</span>
+      <div class="tc-title">No data collected</div>
+      <div class="tc-body">We collect zero personal information about you or your browsing.</div>
+    </div>
+    <div class="tldr-card good">
+      <span class="tc-icon">🔒</span>
+      <div class="tc-title">Stays on your device</div>
+      <div class="tc-body">All analysis results, history, and settings are stored locally only.</div>
+    </div>
+    <div class="tldr-card good">
+      <span class="tc-icon">🚫</span>
+      <div class="tc-title">No tracking</div>
+      <div class="tc-body">No analytics, no telemetry, no usage tracking of any kind.</div>
+    </div>
+    <div class="tldr-card good">
+      <span class="tc-icon">🎯</span>
+      <div class="tc-title">No ads ever</div>
+      <div class="tc-body">No advertising, no monetisation of your data, no third-party trackers.</div>
+    </div>
+  </div>
+
+  <section id="overview">
+    <h2>Overview</h2>
+    <p>PolicyLens ("the extension", "we", "us") is a browser extension developed by NOCTARX that helps users understand and analyze privacy policies and terms of service. This Privacy Policy explains how PolicyLens handles information when you use it.</p>
+    <p><strong>Short version: PolicyLens does not collect, store, transmit, or sell any personal information about you.</strong> Everything the extension does happens locally on your device.</p>
+  </section>
+
+  <section id="what-we-collect">
+    <h2>What We Collect</h2>
+    <p>PolicyLens collects <strong>nothing</strong> about you personally. Specifically, we do not collect:</p>
+    <ul>
+      <li>Your name, email address, or any account information</li>
+      <li>Your browsing history or the websites you visit</li>
+      <li>The content of privacy policies you analyze</li>
+      <li>Your IP address or location</li>
+      <li>Device identifiers or fingerprints</li>
+      <li>Usage patterns or how you interact with the extension</li>
+      <li>Any other personal or sensitive information</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>Your analysis results, policy history, settings, and scores are stored exclusively in <code>chrome.storage.local</code> on your own device.</strong> This data never leaves your browser and is not accessible to us or any third party.</p>
+    </div>
+  </section>
+
+  <section id="external-services">
+    <h2>External Service Calls</h2>
+    <p>PolicyLens makes requests to a small number of external services to provide its features. These are described fully below:</p>
+
+    <h2 style="font-size:.9rem; margin-top:1.2rem; border:none; padding:0;">1. Policy page fetching (Auto Scan)</h2>
+    <p>When Auto Policy Scan is enabled, the extension fetches the privacy policy and terms pages of sites you visit to analyze them. These requests go directly from your browser to the target website — no data passes through our servers. The request includes only standard browser headers (User-Agent, Accept-Language).</p>
+
+    <h2 style="font-size:.9rem; margin-top:1.2rem; border:none; padding:0;">2. ToS;DR API</h2>
+    <p>For sites in the Terms of Service; Didn't Read database, the extension queries <code>api.tosdr.org</code> with only the domain name (e.g., "google.com"). No personal information is included. ToS;DR's privacy policy applies to their service: <a href="https://tosdr.org" target="_blank" rel="noopener">tosdr.org</a>.</p>
+
+    <h2 style="font-size:.9rem; margin-top:1.2rem; border:none; padding:0;">3. HaveIBeenPwned (Email Breach Checker)</h2>
+    <p>The Email Breach Checker uses k-anonymity: your email is SHA-1 hashed, and only the first 5 characters of the hash are sent to <code>api.pwnedpasswords.com</code>. Your full email address is never transmitted. Results are cached locally for 1 hour. HaveIBeenPwned's privacy policy applies: <a href="https://haveibeenpwned.com/Privacy" target="_blank" rel="noopener">haveibeenpwned.com/Privacy</a>.</p>
+
+    <h2 style="font-size:.9rem; margin-top:1.2rem; border:none; padding:0;">4. Google Translate (Multilingual policies)</h2>
+    <p>When a policy page is detected as non-English, the extension may send a text sample (up to 3,000 characters of policy text) to Google's free translation endpoint for analysis. This is policy text only — no personal information about you. Google's Privacy Policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+    <div class="highlight-box warn">
+      <p><strong>None of these services receive your personal information.</strong> All requests contain only technical data necessary for the specific feature (domain names, hash prefixes, or policy text snippets).</p>
+    </div>
+  </section>
+
+  <section id="permissions">
+    <h2>Browser Permissions</h2>
+    <p>PolicyLens requests the following Chrome permissions and uses them as described:</p>
+    <ul>
+      <li><strong>activeTab</strong> — Read the current tab's URL and content to detect policy links and analyze pages.</li>
+      <li><strong>scripting</strong> — Inject the content script to extract text from policy pages opened in background tabs during Auto Scan.</li>
+      <li><strong>storage</strong> — Save your settings, analysis history, and cached results locally on your device.</li>
+      <li><strong>tabs</strong> — Open background tabs to fetch policy pages for Auto Scan, and detect tab navigation for score restoration.</li>
+      <li><strong>notifications</strong> — Show optional desktop notifications when cookie banners are detected (off by default).</li>
+      <li><strong>clipboardWrite</strong> — Copy the analysis report to your clipboard when you click "Copy Report".</li>
+      <li><strong>windows</strong> — Open the extension popup as a standalone window when the "Full Report" button is clicked on a page with overlapping elements.</li>
+      <li><strong>host_permissions (&lt;all_urls&gt;)</strong> — Fetch privacy policy pages from any website for analysis. Required because privacy policies are hosted on any domain.</li>
+    </ul>
+  </section>
+
+  <section id="local-storage">
+    <h2>Local Data Storage</h2>
+    <p>PolicyLens stores the following data locally on your device using <code>chrome.storage.local</code>:</p>
+    <ul>
+      <li><strong>Settings</strong> — Your preferences (auto-scan on/off, notifications on/off, etc.)</li>
+      <li><strong>Policy History</strong> — Domain names, scores, grades, and finding labels from your past analyses (up to 50 sites)</li>
+      <li><strong>Cached Scores</strong> — Privacy scores for domains you've analyzed, stored for up to 30 days</li>
+      <li><strong>Policy Hashes</strong> — 16-character SHA-256 hashes of policy text to detect changes (no policy content stored)</li>
+      <li><strong>Breach Check Cache</strong> — Results of email breach checks, cached for 1 hour</li>
+      <li><strong>Scan Timestamps</strong> — Timestamps of last auto-scan per domain to enforce the 24-hour debounce</li>
+    </ul>
+    <p>All of this data remains entirely on your device. You can clear it at any time via Settings → Policy History → Clear All, or by removing the extension.</p>
+  </section>
+
+  <section id="third-parties">
+    <h2>Third-Party Services & Advertising</h2>
+    <p>PolicyLens contains <strong>no advertising</strong>, <strong>no analytics</strong>, <strong>no telemetry</strong>, and <strong>no third-party tracking scripts</strong>. We do not partner with advertising networks. We do not sell, rent, or share any data with third parties for commercial purposes.</p>
+    <p>The extension's source code is available for review at <a href="https://github.com/NOCTARX-projects" target="_blank" rel="noopener">github.com/NOCTARX-projects</a>.</p>
+  </section>
+
+  <section id="children">
+    <h2>Children's Privacy</h2>
+    <p>PolicyLens is a general-purpose browser extension not directed at children. We do not knowingly collect any information from children under the age of 13. Since we collect no personal information from any user, this applies equally to all age groups.</p>
+  </section>
+
+  <section id="changes">
+    <h2>Changes to This Policy</h2>
+    <p>If we make material changes to this Privacy Policy, we will update the "Last updated" date at the top of this page and note changes in the extension's changelog. Continued use of the extension after changes constitutes acceptance of the revised policy.</p>
+    <p>Given that we collect no personal data, material changes are unlikely to affect your privacy in any meaningful way.</p>
+  </section>
+
+  <section id="rights">
+    <h2>Your Rights</h2>
+    <p>Since PolicyLens collects no personal information about you, there is no personal data for us to provide, correct, or delete on your behalf. All data the extension stores is on your own device and under your full control:</p>
+    <ul>
+      <li>Clear history via Settings → Policy History → Clear All</li>
+      <li>Remove all extension data by uninstalling PolicyLens from Chrome</li>
+      <li>Disable any feature (auto-scan, notifications, history) independently in Settings</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <div class="contact-card">
+      <h3>⬡ Contact</h3>
+      <p>contact-noctarx@proton.me</p>
+      <p>Questions about this Privacy Policy or PolicyLens?</p>
+      <p>
+        <a href="https://github.com/NOCTARX-projects" target="_blank" rel="noopener">github.com/NOCTARX-projects</a><br><br>
+        <a href="https://www.buymeacoffee.com/noctarxcorp" target="_blank" rel="noopener">☕ Support PolicyLens</a>
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <span>PolicyLens by NOCTARX · v1.6.0</span>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/NOCTARX-projects">GitHub</a>
+  &nbsp;·&nbsp;
+  <span>This policy was last updated April 2026</span>
+</footer>
+
+</body>
+</html>
